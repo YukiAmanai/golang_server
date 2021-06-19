@@ -6,9 +6,10 @@ import (
 )
 
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
-	message := []byte("Hello World!")
+	message := "Hello World!"
+	vec := []byte(message)
 	// Add message to the response
-	_, err := writer.Write(message)
+	_, err := writer.Write(vec)
 	if err != nil {
 		log.Fatal(err)
 	}
